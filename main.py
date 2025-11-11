@@ -1,8 +1,13 @@
+import numpy as np
+import sympy as sp
+import matplotlib.pyplot as plt
+
+
 def mostrar_tabela(x_points, y_points):
     """
     Exibe os dados (hora x temperatura) em formato de tabela (matriz).
     """
-    print("\nTABELA DE DADOS - VARIAÇÃO DE TEMPERATURA")
+    print("\nTABELA DE DADOS - VARIAÇÃO DE TEMPERATURA DO MUNICÍPIO DE CARUARU - DATA: 12/10/2025")
     print("┌────────────┬───────────────────────┐")
     print("│  Hora (h)  │  Temperatura (°C)     │")
     print("├────────────┼───────────────────────┤")
@@ -29,22 +34,17 @@ def lagrange_interpol(x_points, y_points, x):
 
 
 def main():
-    # Dados base (hora x temperatura)
-    x_points = [6, 9, 12, 15, 18]
-    y_points = [15, 18, 24, 22, 19]
 
-    # Mostra tabela de dados
+    x_points = [0, 3, 6, 9, 12, 15, 18, 21]
+    y_points = [18.5, 18.5, 18.2, 18, 21.3, 25.4, 24.3, 20.2]
+
     mostrar_tabela(x_points, y_points)
 
-    # Solicita ao usuário a hora que deseja estimar
     try:
         x_estimar = float(input("Digite a hora do dia que deseja estimar a temperatura: "))
         y_estimado = lagrange_interpol(x_points, y_points, x_estimar)
 
-        if x_estimar > 18:
-            print("Não é possivel fazer a interpolação, pós o valor excede os dados do gráfico!")
-        else:
-            print(f"\n🌡️  Temperatura estimada às {x_estimar:.2f}h: {y_estimado:.2f} °C\n")
+        print(f"\n🌡️  Temperatura estimada às {x_estimar:.2f}h: {y_estimado:.2f} °C\n")
     except ValueError:
         print("\n❌ Entrada inválida. Digite um número válido para a hora.\n")
 
