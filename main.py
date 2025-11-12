@@ -42,14 +42,13 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
-                    print("\nPREPARANDO GRÁFICO", end="")
-                    for _ in range(3):
-                        sleep(0.7)
-                        print(".", end="")
-                    print()
-                    sleep(0.21)
-
                     if op == 1:
+                        print("\nPREPARANDO GRÁFICO", end="")
+                        for _ in range(3):
+                            sleep(0.7)
+                            print(".", end="")
+                        print()
+                        sleep(0.21)
                         t_values = np.linspace(min(x), max(x), 300)
                         p_values = [lagrange(x, y, t) for t in t_values]
 
@@ -62,14 +61,36 @@ while True:
                         plt.legend()
                         plt.grid(True)
                         plt.show()
+                        flag = 1
                     elif op == 2:
-                        print("Tudo bem!")
+                        flag = 1
+                        print("\nTudo bem!")
                     else:
                         print("\nOps...opção invalida!\n")
+                        while True:
+                            try:
+                                print("Deseja tentar novamente?")
+                                print("1 - Sim.")
+                                print("2 - Não.")
+                                verificar = int(input("Digite aqui: "))
+
+                                if verificar == 1:
+                                    break
+                                elif verificar == 2:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    exit()
+                                else:
+                                    print("\nOps...opção invalida!\n")
+                            except ValueError:
+                                print("\nEntrada inválida. Digite uma opção válido.\n")
+
                 except ValueError:
                     print("\nEntrada inválida. Digite uma opção válido.\n")
-                    break
-                flag = 1
             case 2:
                 zona = "America/New_York"
                 nome_cidade = "Nova York"
@@ -81,14 +102,13 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
-                    print("\nPREPARANDO GRÁFICO", end="")
-                    for _ in range(3):
-                        sleep(0.7)
-                        print(".", end="")
-                    print()
-                    sleep(0.21)
-
                     if op == 1:
+                        print("\nPREPARANDO GRÁFICO", end="")
+                        for _ in range(3):
+                            sleep(0.7)
+                            print(".", end="")
+                        print()
+                        sleep(0.21)
                         t_values = np.linspace(min(x), max(x), 200)
                         p_values = [lagrange(x, y, ti) for ti in t_values]
 
@@ -101,14 +121,35 @@ while True:
                         plt.legend()
                         plt.grid(True)
                         plt.show()
+                        flag = 1
                     elif op == 2:
-                        print("Tudo bem!")
+                        flag = 1
+                        print("\nTudo bem!")
                     else:
                         print("\nOps...opção invalida!\n")
+                        while True:
+                            try:
+                                print("Deseja tentar novamente?")
+                                print("1 - Sim.")
+                                print("2 - Não.")
+                                verificar = int(input("Digite aqui: "))
+
+                                if verificar == 1:
+                                    break
+                                elif verificar == 2:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    exit()
+                                else:
+                                    print("\nOps...opção invalida!\n")
+                            except ValueError:
+                                print("\nEntrada inválida. Digite uma opção válido.\n")
                 except ValueError:
                     print("\nEntrada inválida. Digite uma opção válido.\n")
-                    break
-                flag = 1
             case 3:
                 zona = "Europe/Lisbon"
                 nome_cidade = "Lisboa"
@@ -120,14 +161,14 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
-                    print("\nPREPARANDO GRÁFICO", end="")
-                    for _ in range(3):
-                        sleep(0.7)
-                        print(".", end="")
-                    print()
-                    sleep(0.21)
-
                     if op == 1:
+                        print("\nPREPARANDO GRÁFICO", end="")
+                        for _ in range(3):
+                            sleep(0.7)
+                            print(".", end="")
+                        print()
+                        sleep(0.21)
+
                         t_values = np.linspace(min(x), max(x), 300)
                         p_values = [lagrange(x, y, ti) for ti in t_values]
 
@@ -140,14 +181,36 @@ while True:
                         plt.legend()
                         plt.grid(True)
                         plt.show()
+                        flag = 1
                     elif op == 2:
-                        print("Tudo bem!")
+                        flag = 1
+                        print("\nTudo bem!")
+                        break
                     else:
                         print("\nOps...opção invalida!\n")
+                        while True:
+                            try:
+                                print("Deseja tentar novamente?")
+                                print("1 - Sim.")
+                                print("2 - Não.")
+                                verificar = int(input("Digite aqui: "))
+
+                                if verificar == 1:
+                                    break
+                                elif verificar == 2:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    exit()
+                                else:
+                                    print("\nOps...opção invalida!\n")
+                            except ValueError:
+                                print("\nEntrada inválida. Digite uma opção válido.\n")
                 except ValueError:
                     print("\nEntrada inválida. Digite uma opção válido.\n")
-                    break
-                flag = 1
             case 4:
                 zona = "Asia/Tokyo"
                 nome_cidade = "Tóquio"
@@ -159,14 +222,13 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
-                    print("\nPREPARANDO GRÁFICO", end="")
-                    for _ in range(3):
-                        sleep(0.7)
-                        print(".", end="")
-                    print()
-                    sleep(0.21)
-
                     if op == 1:
+                        print("\nPREPARANDO GRÁFICO", end="")
+                        for _ in range(3):
+                            sleep(0.7)
+                            print(".", end="")
+                        print()
+                        sleep(0.21)
                         t_values = np.linspace(min(x), max(x), 300)
                         p_values = [lagrange(x, y, ti) for ti in t_values]
 
@@ -179,14 +241,35 @@ while True:
                         plt.legend()
                         plt.grid(True)
                         plt.show()
+                        flag = 1
                     elif op == 2:
-                        print("Tudo bem!")
+                        flag = 1
+                        print("\nTudo bem!")
                     else:
                         print("\nOps...opção invalida!\n")
+                        while True:
+                            try:
+                                print("Deseja tentar novamente?")
+                                print("1 - Sim.")
+                                print("2 - Não.")
+                                verificar = int(input("Digite aqui: "))
+
+                                if verificar == 1:
+                                    break
+                                elif verificar == 2:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    exit()
+                                else:
+                                    print("\nOps...opção invalida!\n")
+                            except ValueError:
+                                print("\nEntrada inválida. Digite uma opção válido.\n")
                 except ValueError:
                     print("\nEntrada inválida. Digite uma opção válido.\n")
-                    break
-                flag = 1
             case 5:
                 zona = "America/Recife"
                 nome_cidade = "Recife"
@@ -198,14 +281,13 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
-                    print("\nPREPARANDO GRÁFICO", end="")
-                    for _ in range(3):
-                        sleep(0.7)
-                        print(".", end="")
-                    print()
-                    sleep(0.21)
-
                     if op == 1:
+                        print("\nPREPARANDO GRÁFICO", end="")
+                        for _ in range(3):
+                            sleep(0.7)
+                            print(".", end="")
+                        print()
+                        sleep(0.21)
                         t_values = np.linspace(min(x), max(x), 200)
                         p_values = [lagrange(x, y, ti) for ti in t_values]
 
@@ -219,16 +301,38 @@ while True:
                         plt.legend()
                         plt.grid(True)
                         plt.show()
+                        flag = 1
                     elif op == 2:
-                        print("Tudo bem!")
+                        flag = 1
+                        print("\nTudo bem!")
                     else:
                         print("\nOps...opção invalida!\n")
+                        while True:
+                            try:
+                                print("Deseja tentar novamente?")
+                                print("1 - Sim.")
+                                print("2 - Não.")
+                                verificar = int(input("Digite aqui: "))
+
+                                if verificar == 1:
+                                    break
+                                elif verificar == 2:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    exit()
+                                else:
+                                    print("\nOps...opção invalida!\n")
+                            except ValueError:
+                                print("\nEntrada inválida. Digite uma opção válido.\n")
                 except ValueError:
                     print("\nEntrada inválida. Digite uma opção válido.\n")
                     break
-                flag = 1
             case _:
-                print("\nEntrada inválida. Digite uma opção válido.\n")
+                print("\nOps...opção invalida!\n")
                 while True:
                     try:
                         print("Deseja tentar novamente?")
@@ -237,7 +341,6 @@ while True:
                         verificar = int(input("Digite aqui: "))
 
                         if verificar == 1:
-                            flag = 0
                             break
                         elif verificar == 2:
                             print("FIQUE BEM", end="")
