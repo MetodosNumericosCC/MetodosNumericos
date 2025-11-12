@@ -20,14 +20,14 @@ while True:
     x = np.array([0, 3, 6, 9, 12, 15, 18, 21], float)
 
     try:
-        print("\nEscolha uma cidade:")
-        print("1 - São Paulo")
-        print("2 - Nova York")
-        print("3 - Lisboa")
-        print("4 - Tóquio")
-        print("5 - Recife")
+        print("\nESCOLHA UMA CIDADE:")
+        print("1 - SÃO PAULO")
+        print("2 - NOVA YORK")
+        print("3 - LISBOA")
+        print("4 - TÓQUIO")
+        print("5 - RECIFE")
 
-        op = int(input("Digite a opção: "))
+        op = int(input("DIGITE UMA OPÇÃO: "))
         flag = 0
 
         match op:
@@ -37,10 +37,10 @@ while True:
                 y = np.array([19, 18, 17, 21, 26, 27, 24, 21], float)
 
                 try:
-                    print("\nDeseja ver o gráfico?")
-                    print("1 - Sim.")
-                    print("2 - Não.")
-                    op = int(input("Digite aqui: "))
+                    print("\nDESEJA VER O GRÁFICO?")
+                    print("1 - SIM.")
+                    print("2 - NÃO.")
+                    op = int(input("DIGITE AQUI: "))
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
@@ -64,15 +64,15 @@ while True:
                         flag = 1
                     elif op == 2:
                         flag = 1
-                        print("\nTudo bem!")
+                        print("\nTUDO BEM!")
                     else:
-                        print("\nOps...opção invalida!\n")
+                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
                         while True:
                             try:
-                                print("Deseja tentar novamente?")
-                                print("1 - Sim.")
-                                print("2 - Não.")
-                                verificar = int(input("Digite aqui: "))
+                                print("DESEJA TENTAR NOVAMENTE?")
+                                print("1 - SIM.")
+                                print("2 - NÃO.")
+                                verificar = int(input("DIGITE AQUI: "))
 
                                 if verificar == 1:
                                     break
@@ -85,22 +85,22 @@ while True:
                                     sleep(0.21)
                                     exit()
                                 else:
-                                    print("\nOps...opção invalida!\n")
+                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
-                                print("\nEntrada inválida. Digite uma opção válido.\n")
+                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
 
                 except ValueError:
-                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
             case 2:
                 zona = "America/New_York"
                 nome_cidade = "Nova York"
                 y = np.array([13, 11, 10, 14, 19, 21, 18, 15], float)
 
                 try:
-                    print("\nDeseja ver o gráfico?")
-                    print("1 - Sim.")
-                    print("2 - Não.")
-                    op = int(input("Digite aqui: "))
+                    print("\nDESEJA VER O GRÁFICO?")
+                    print("1 - SIM.")
+                    print("2 - NÃO.")
+                    op = int(input("DIGITE AQUI: "))
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
@@ -124,15 +124,15 @@ while True:
                         flag = 1
                     elif op == 2:
                         flag = 1
-                        print("\nTudo bem!")
+                        print("\nTUDO BEM!")
                     else:
-                        print("\nOps...opção invalida!\n")
+                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
                         while True:
                             try:
-                                print("Deseja tentar novamente?")
-                                print("1 - Sim.")
-                                print("2 - Não.")
-                                verificar = int(input("Digite aqui: "))
+                                print("DESEJA TENTAR NOVAMENTE?")
+                                print("1 - SIM.")
+                                print("2 - NÃO.")
+                                verificar = int(input("DIGITE AQUI: "))
 
                                 if verificar == 1:
                                     break
@@ -145,21 +145,22 @@ while True:
                                     sleep(0.21)
                                     exit()
                                 else:
-                                    print("\nOps...opção invalida!\n")
+                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
-                                print("\nEntrada inválida. Digite uma opção válido.\n")
+                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+
                 except ValueError:
-                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
             case 3:
                 zona = "Europe/Lisbon"
                 nome_cidade = "Lisboa"
                 y = np.array([15, 13, 12, 17, 22, 23, 20, 17], float)
 
                 try:
-                    print("\nDeseja ver o gráfico?")
-                    print("1 - Sim.")
-                    print("2 - Não.")
-                    op = int(input("Digite aqui: "))
+                    print("\nDESEJA VER O GRÁFICO?")
+                    print("1 - SIM.")
+                    print("2 - NÃO.")
+                    op = int(input("DIGITE AQUI: "))
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
@@ -184,15 +185,15 @@ while True:
                         flag = 1
                     elif op == 2:
                         flag = 1
-                        print("\nTudo bem!")
+                        print("\nTUDO BEM!")
                     else:
-                        print("\nOps...opção invalida!\n")
+                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
                         while True:
                             try:
-                                print("Deseja tentar novamente?")
-                                print("1 - Sim.")
-                                print("2 - Não.")
-                                verificar = int(input("Digite aqui: "))
+                                print("DESEJA TENTAR NOVAMENTE?")
+                                print("1 - SIM.")
+                                print("2 - NÃO.")
+                                verificar = int(input("DIGITE AQUI: "))
 
                                 if verificar == 1:
                                     break
@@ -205,21 +206,22 @@ while True:
                                     sleep(0.21)
                                     exit()
                                 else:
-                                    print("\nOps...opção invalida!\n")
+                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
-                                print("\nEntrada inválida. Digite uma opção válido.\n")
+                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+
                 except ValueError:
-                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
             case 4:
                 zona = "Asia/Tokyo"
                 nome_cidade = "Tóquio"
                 y = np.array([20, 19, 18, 22, 27, 28, 25, 22], float)
 
                 try:
-                    print("\nDeseja ver o gráfico?")
-                    print("1 - Sim.")
-                    print("2 - Não.")
-                    op = int(input("Digite aqui: "))
+                    print("\nDESEJA VER O GRÁFICO?")
+                    print("1 - SIM.")
+                    print("2 - NÃO.")
+                    op = int(input("DIGITE AQUI: "))
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
@@ -243,15 +245,15 @@ while True:
                         flag = 1
                     elif op == 2:
                         flag = 1
-                        print("\nTudo bem!")
+                        print("\nTUDO BEM!")
                     else:
-                        print("\nOps...opção invalida!\n")
+                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
                         while True:
                             try:
-                                print("Deseja tentar novamente?")
-                                print("1 - Sim.")
-                                print("2 - Não.")
-                                verificar = int(input("Digite aqui: "))
+                                print("DESEJA TENTAR NOVAMENTE?")
+                                print("1 - SIM.")
+                                print("2 - NÃO.")
+                                verificar = int(input("DIGITE AQUI: "))
 
                                 if verificar == 1:
                                     break
@@ -264,21 +266,22 @@ while True:
                                     sleep(0.21)
                                     exit()
                                 else:
-                                    print("\nOps...opção invalida!\n")
+                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
-                                print("\nEntrada inválida. Digite uma opção válido.\n")
+                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+
                 except ValueError:
-                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
             case 5:
                 zona = "America/Recife"
                 nome_cidade = "Recife"
                 y = np.array([24, 23, 24, 28, 31, 32, 29, 26], float)
 
                 try:
-                    print("\nDeseja ver o gráfico?")
-                    print("1 - Sim.")
-                    print("2 - Não.")
-                    op = int(input("Digite aqui: "))
+                    print("\nDESEJA VER O GRÁFICO?")
+                    print("1 - SIM.")
+                    print("2 - NÃO.")
+                    op = int(input("DIGITE AQUI: "))
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
@@ -303,15 +306,15 @@ while True:
                         flag = 1
                     elif op == 2:
                         flag = 1
-                        print("\nTudo bem!")
+                        print("\nTUDO BEM!")
                     else:
-                        print("\nOps...opção invalida!\n")
+                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
                         while True:
                             try:
-                                print("Deseja tentar novamente?")
-                                print("1 - Sim.")
-                                print("2 - Não.")
-                                verificar = int(input("Digite aqui: "))
+                                print("DESEJA TENTAR NOVAMENTE?")
+                                print("1 - SIM.")
+                                print("2 - NÃO.")
+                                verificar = int(input("DIGITE AQUI: "))
 
                                 if verificar == 1:
                                     break
@@ -324,20 +327,20 @@ while True:
                                     sleep(0.21)
                                     exit()
                                 else:
-                                    print("\nOps...opção invalida!\n")
+                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
-                                print("\nEntrada inválida. Digite uma opção válido.\n")
+                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+
                 except ValueError:
-                    print("\nEntrada inválida. Digite uma opção válido.\n")
-                    break
+                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
             case _:
-                print("\nOps...opção invalida!\n")
+                print("\nOPS...OPÇÃO INVÁLIDA!\n")
                 while True:
                     try:
-                        print("Deseja tentar novamente?")
-                        print("1 - Sim.")
-                        print("2 - Não.")
-                        verificar = int(input("Digite aqui: "))
+                        print("DESEJA TENTAR NOVAMENTE?")
+                        print("1 - SIM.")
+                        print("2 - NÃO.")
+                        verificar = int(input("DIGITE AQUI: "))
 
                         if verificar == 1:
                             break
@@ -350,9 +353,9 @@ while True:
                             sleep(0.21)
                             exit()
                         else:
-                            print("\nOps...opção invalida!\n")
+                            print("\nOPS...OPÇÃO INVÁLIDA!\n")
                     except ValueError:
-                        print("\nEntrada inválida. Digite uma opção válido.\n")
+                        print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
 
         while True:
             if flag == 1:
@@ -363,10 +366,10 @@ while True:
                 temp_interp = lagrange(x, y, hora_decimal)
 
                 try:
-                    print("\nDeseja ver a tabela?")
-                    print("1 - Sim.")
-                    print("2 - Não.")
-                    op = int(input("Digite aqui: "))
+                    print("\nDESEJA VER A TABELA?")
+                    print("1 - SIM.")
+                    print("2 - NÃO.")
+                    OP = int(input("DIGITE AQUI: "))
 
                     if op == 1:
                         flag = 1
@@ -378,9 +381,9 @@ while True:
                         sleep(0.21)
 
                         print("\n--- TABELA DE TEMPERATURAS ---")
-                        print(f"Cidade: {nome_cidade}")
+                        print(f"CIDADE: {nome_cidade.upper()}")
                         print("-------------------------------")
-                        print(f"{'Hora (h)':<10} {'Temperatura (°C)':<20}")
+                        print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
                         print("-------------------------------")
                         for i in range(len(x)):
                             print(f"{x[i]:<10.0f} {y[i]:<20.1f}")
@@ -388,10 +391,10 @@ while True:
 
                         while True:
                             try:
-                                print("\nDeseja ver a temperatura ás", agora.strftime("%H:%M:%S"))
-                                print("1 - Sim.")
-                                print("2 - Não.")
-                                verificar = int(input("Digite aqui: "))
+                                print("\nDESEJA VER A TEMPERATURA ÁS", agora.strftime("%H:%M:%S"))
+                                print("1 - SIM.")
+                                print("2 - NÃO.")
+                                verificar = int(input("DIGITE AQUI: "))
 
                                 if verificar == 1:
                                     print("\nCALCULANDO RESULTADO", end="")
@@ -401,16 +404,16 @@ while True:
                                     print()
                                     sleep(0.21)
                                     print("\n--- RESULTADO ---")
-                                    print("Cidade: ", nome_cidade)
-                                    print("Horário atual:", agora.strftime("%H:%M:%S"))
-                                    print(f"Hora decimal: {hora_decimal:.4f}")
-                                    print(f"Temperatura interpolada (Lagrange): {temp_interp:.2f} °C")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
 
                                     while True:
-                                        print("\nDeseja fazer uma nova consulta?")
-                                        print("1 - Sim.")
-                                        print("2 - Não.")
-                                        verificar = int(input("Digite aqui: "))
+                                        print("\nDESEJA FAZER UMA NOVA CONSULTA?")
+                                        print("1 - SIM.")
+                                        print("2 - NÃO.")
+                                        verificar = int(input("DIGITE AQUI: "))
 
                                         try:
                                             if verificar == 1:
@@ -424,13 +427,13 @@ while True:
                                                 sleep(0.21)
                                                 exit()
                                             else:
-                                                print("\nOps...opção invalida!\n")
+                                                print("\nOPS...OPÇÃO INVÁLIDA!\n")
                                                 while True:
                                                     try:
-                                                        print("Deseja tentar novamente?")
-                                                        print("1 - Sim.")
-                                                        print("2 - Não.")
-                                                        verificar = int(input("Digite aqui: "))
+                                                        print("DESEJA TENTAR NOVAMENTE?")
+                                                        print("1 - SIM.")
+                                                        print("2 - NÃO.")
+                                                        verificar = int(input("DIGITE AQUI: "))
 
                                                         if verificar == 1:
                                                             break
@@ -443,11 +446,11 @@ while True:
                                                             sleep(0.21)
                                                             exit()
                                                         else:
-                                                            print("\nOps...opção invalida!\n")
+                                                            print("\nOPS...OPÇÃO INVÁLIDA!\n")
                                                     except ValueError:
-                                                        print("\nEntrada inválida. Digite uma opção válido.\n")
+                                                        print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                                         except ValueError:
-                                            print("\nEntrada inválida. Digite uma opção válido.\n")
+                                            print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                                     break
                                 elif verificar == 2:
                                     print("FIQUE BEM", end="")
@@ -459,10 +462,10 @@ while True:
                                     exit()
 
                                 else:
-                                    print("\nOps...opção invalida!\n")
+                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
 
                             except ValueError:
-                                print("\nEntrada inválida. Digite uma opção válida.\n")
+                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                     elif op == 2:
                         print("FIQUE BEM", end="")
                         for i in range(3):
@@ -472,13 +475,13 @@ while True:
                         sleep(0.21)
                         exit()
                     else:
-                        print("\nOps...opção invalida!\n")
+                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
                         while True:
                             try:
-                                print("Deseja tentar novamente?")
-                                print("1 - Sim.")
-                                print("2 - Não.")
-                                verificar = int(input("Digite aqui: "))
+                                print("DESEJA TENTAR NOVAMENTE?")
+                                print("1 - SIM.")
+                                print("2 - NÃO.")
+                                verificar = int(input("DIGITE AQUI: "))
 
                                 if verificar == 1:
                                     break
@@ -491,11 +494,11 @@ while True:
                                     sleep(0.21)
                                     exit()
                                 else:
-                                    print("\nOps...opção invalida!\n")
+                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
-                                print("\nEntrada inválida. Digite uma opção válido.\n")
+                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                 except ValueError:
-                    print("\nEntrada inválida. Digite uma opção válida.\n")
+                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                 break
     except ValueError:
-        print("\nEntrada inválida. Digite uma opção válido.\n")
+        print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
