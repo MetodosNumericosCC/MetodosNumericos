@@ -18,7 +18,7 @@ Projeto produzido durante o estudo de Métodos Numéricos
 <br>
 
 <p align="center">
-  <img alt="capa" src="capa.jpg" width="100%">
+  <img alt="capa" src="assets/Capa - Temperature Variation.jpg" width="100%">
 </p>
 
 
