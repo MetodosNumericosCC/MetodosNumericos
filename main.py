@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from time import sleep
@@ -34,26 +35,157 @@ while True:
                 zona = "America/Sao_Paulo"
                 nome_cidade = "São Paulo"
                 y = np.array([19, 18, 17, 21, 26, 27, 24, 21], float)
+
+                try:
+                    print("\nDeseja ver o gráfico?")
+                    print("1 - Sim.")
+                    print("2 - Não.")
+                    op = int(input("Digite aqui: "))
+
+                    if op == 1:
+                        t_values = np.linspace(min(x), max(x), 300)
+                        p_values = [lagrange(x, y, t) for t in t_values]
+
+                        plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
+                        plt.scatter(x, y, color='red', label='Pontos dados')
+                        plt.title('Interpolação de Lagrange')
+                        plt.xlabel('x')
+                        plt.ylabel('y')
+                        plt.legend()
+                        plt.grid(True)
+                        plt.show()
+                    elif op == 2:
+                        print("Tudo bem!")
+                    else:
+                        print("\nOps...opção invalida!\n")
+                except ValueError:
+                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    break
                 flag = 1
             case 2:
                 zona = "America/New_York"
                 nome_cidade = "Nova York"
                 y = np.array([13, 11, 10, 14, 19, 21, 18, 15], float)
+
+                try:
+                    print("\nDeseja ver o gráfico?")
+                    print("1 - Sim.")
+                    print("2 - Não.")
+                    op = int(input("Digite aqui: "))
+
+                    if op == 1:
+                        t = np.linspace(min(x), max(x), 200)
+                        p = [lagrange(x, y, ti) for ti in t]
+
+                        plt.plot(x, y, 'ro', label='Pontos dados')
+                        plt.plot(t, p, 'b-', label='Interpolação de Lagrange')
+                        plt.title('Interpolação Polinomial de Lagrange')
+                        plt.xlabel('x')
+                        plt.ylabel('y')
+                        plt.legend()
+                        plt.grid(True)
+                        plt.show()
+                    elif op == 2:
+                        print("Tudo bem!")
+                    else:
+                        print("\nOps...opção invalida!\n")
+                except ValueError:
+                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    break
                 flag = 1
             case 3:
                 zona = "Europe/Lisbon"
                 nome_cidade = "Lisboa"
                 y = np.array([15, 13, 12, 17, 22, 23, 20, 17], float)
+
+                try:
+                    print("\nDeseja ver o gráfico?")
+                    print("1 - Sim.")
+                    print("2 - Não.")
+                    op = int(input("Digite aqui: "))
+
+                    if op == 1:
+                        t = np.linspace(min(x), max(x), 300)
+                        p = [lagrange(x, y, ti) for ti in t]
+
+                        plt.plot(t, p, 'b-', label='Interpolação de Lagrange')
+                        plt.scatter(x, y, color='red', label='Pontos dados')
+                        plt.title('Polinômio Interpolador de Lagrange')
+                        plt.xlabel('x')
+                        plt.ylabel('y')
+                        plt.legend()
+                        plt.grid(True)
+                        plt.show()
+                    elif op == 2:
+                        print("Tudo bem!")
+                    else:
+                        print("\nOps...opção invalida!\n")
+                except ValueError:
+                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    break
                 flag = 1
             case 4:
                 zona = "Asia/Tokyo"
                 nome_cidade = "Tóquio"
                 y = np.array([20, 19, 18, 22, 27, 28, 25, 22], float)
+
+                try:
+                    print("\nDeseja ver o gráfico?")
+                    print("1 - Sim.")
+                    print("2 - Não.")
+                    op = int(input("Digite aqui: "))
+
+                    if op == 1:
+                        t = np.linspace(min(x), max(x), 300)
+                        p = [lagrange(x, y, ti) for ti in t]
+
+                        plt.plot(x, y, 'o', label='Pontos dados', color='red')
+                        plt.plot(t, p, label='Polinômio de Lagrange', color='blue')
+                        plt.xlabel('x')
+                        plt.ylabel('y')
+                        plt.title('Interpolação Polinomial de Lagrange')
+                        plt.legend()
+                        plt.grid(True)
+                        plt.show()
+                    elif op == 2:
+                        print("Tudo bem!")
+                    else:
+                        print("\nOps...opção invalida!\n")
+                except ValueError:
+                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    break
                 flag = 1
             case 5:
                 zona = "America/Recife"
                 nome_cidade = "Recife"
                 y = np.array([24, 23, 24, 28, 31, 32, 29, 26], float)
+
+                try:
+                    print("\nDeseja ver o gráfico?")
+                    print("1 - Sim.")
+                    print("2 - Não.")
+                    op = int(input("Digite aqui: "))
+
+                    if op == 1:
+                        t = np.linspace(min(x), max(x), 200)
+                        p = [lagrange(x, y, ti) for ti in t]
+
+                        plt.figure(figsize=(8, 5))
+                        plt.plot(x, y, 'ro', label='Pontos conhecidos')
+                        plt.plot(t, p, 'b-', label='Interpolação de Lagrange')
+                        plt.xlabel('x')
+                        plt.ylabel('y')
+                        plt.title('Interpolação de Lagrange')
+                        plt.legend()
+                        plt.grid(True)
+                        plt.show()
+                    elif op == 2:
+                        print("Tudo bem!")
+                    else:
+                        print("\nOps...opção invalida!\n")
+                except ValueError:
+                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                    break
                 flag = 1
             case _:
                 print("\nEntrada inválida. Digite uma opção válido.\n")
