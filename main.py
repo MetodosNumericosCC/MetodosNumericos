@@ -42,6 +42,13 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
+                    print("\nPREPARANDO GRÁFICO", end="")
+                    for _ in range(3):
+                        sleep(0.7)
+                        print(".", end="")
+                    print()
+                    sleep(0.21)
+
                     if op == 1:
                         t_values = np.linspace(min(x), max(x), 300)
                         p_values = [lagrange(x, y, t) for t in t_values]
@@ -72,6 +79,13 @@ while True:
                     print("1 - Sim.")
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
+
+                    print("\nPREPARANDO GRÁFICO", end="")
+                    for _ in range(3):
+                        sleep(0.7)
+                        print(".", end="")
+                    print()
+                    sleep(0.21)
 
                     if op == 1:
                         t = np.linspace(min(x), max(x), 200)
@@ -104,6 +118,13 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
+                    print("\nPREPARANDO GRÁFICO", end="")
+                    for _ in range(3):
+                        sleep(0.7)
+                        print(".", end="")
+                    print()
+                    sleep(0.21)
+
                     if op == 1:
                         t = np.linspace(min(x), max(x), 300)
                         p = [lagrange(x, y, ti) for ti in t]
@@ -135,6 +156,13 @@ while True:
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
 
+                    print("\nPREPARANDO GRÁFICO", end="")
+                    for _ in range(3):
+                        sleep(0.7)
+                        print(".", end="")
+                    print()
+                    sleep(0.21)
+
                     if op == 1:
                         t = np.linspace(min(x), max(x), 300)
                         p = [lagrange(x, y, ti) for ti in t]
@@ -165,6 +193,13 @@ while True:
                     print("1 - Sim.")
                     print("2 - Não.")
                     op = int(input("Digite aqui: "))
+
+                    print("\nPREPARANDO GRÁFICO", end="")
+                    for _ in range(3):
+                        sleep(0.7)
+                        print(".", end="")
+                    print()
+                    sleep(0.21)
 
                     if op == 1:
                         t = np.linspace(min(x), max(x), 200)
@@ -234,7 +269,7 @@ while True:
             for i in range(len(x)):
                 print(f"{x[i]:<10.0f} {y[i]:<20.1f}")
             print("-------------------------------")
-            
+
             while True:
                 try:
                     print("\nDeseja ver a temperatura ás", agora.strftime("%H:%M:%S"))
@@ -243,7 +278,7 @@ while True:
                     verificar = int(input("Digite aqui: "))
 
                     if verificar == 1:
-                        print("CARREGANDO RESULTADO", end="")
+                        print("CALCULANDO RESULTADO", end="")
                         for _ in range(3):
                             sleep(0.7)
                             print(".", end="")
@@ -253,7 +288,7 @@ while True:
                         print("Horário atual:", agora.strftime("%H:%M:%S"))
                         print(f"Hora decimal: {hora_decimal:.4f}")
                         print(f"Temperatura interpolada (Lagrange): {temp_interp:.2f} °C")
-                        
+
                         print("\nDeseja fazer uma nova consulta?")
                         print("1 - Sim.")
                         print("2 - Não.")
@@ -274,7 +309,7 @@ while True:
                                 print("\nOps...opção invalida!\n")
                         except ValueError:
                             print("\nEntrada inválida. Digite uma opção válido.\n")
-                            
+
                     elif verificar == 2:
                         print("FIQUE BEM", end="")
                         for i in range(3):
@@ -283,10 +318,10 @@ while True:
                         print()
                         sleep(0.21)
                         exit()
-                        
+
                     else:
                         print("\nOps...opção invalida!\n")
-    
+
                 except ValueError:
                     print("\nEntrada inválida. Digite uma opção válida.\n")
     except ValueError:
