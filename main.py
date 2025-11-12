@@ -298,6 +298,7 @@ while True:
                                 print()
                                 sleep(0.21)
                                 print("\n--- RESULTADO ---")
+                                print("Cidade: ", nome_cidade)
                                 print("Horário atual:", agora.strftime("%H:%M:%S"))
                                 print(f"Hora decimal: {hora_decimal:.4f}")
                                 print(f"Temperatura interpolada (Lagrange): {temp_interp:.2f} °C")
