@@ -33,7 +33,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O Projeto de Métodos Numéricos com ênfase em Variação de Temperatura interpola os dados (Temperatura/Horário) do município escolhido utilizando os métodos de Lagrange e Diferenças Divididas.
+O Projeto de Métodos Numéricos com ênfase em Variação de Temperatura interpola os dados (Temperatura/Horário) do local escolhido utilizando os métodos de Lagrange e Diferenças Divididas.
 
 ## 👥 Integrantes
 
