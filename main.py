@@ -54,6 +54,7 @@ while True:
                         p_values = [lagrange(x, y, t) for t in t_values]
 
                         plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
+                        plt.plot(t_values, p_values, label='São Paulo', color='blue')
                         plt.scatter(x, y, color='red', label='Pontos dados')
                         plt.title('Interpolação de Lagrange')
                         plt.xlabel('x')
@@ -88,11 +89,12 @@ while True:
                     sleep(0.21)
 
                     if op == 1:
-                        t = np.linspace(min(x), max(x), 200)
-                        p = [lagrange(x, y, ti) for ti in t]
+                        t_values = np.linspace(min(x), max(x), 200)
+                        p_values = [lagrange(x, y, ti) for ti in t_values]
 
                         plt.plot(x, y, 'ro', label='Pontos dados')
-                        plt.plot(t, p, 'b-', label='Interpolação de Lagrange')
+                        plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                        plt.plot(t_values, p_values, label='Nova York', color='blue')
                         plt.title('Interpolação Polinomial de Lagrange')
                         plt.xlabel('x')
                         plt.ylabel('y')
@@ -126,11 +128,12 @@ while True:
                     sleep(0.21)
 
                     if op == 1:
-                        t = np.linspace(min(x), max(x), 300)
-                        p = [lagrange(x, y, ti) for ti in t]
+                        t_values = np.linspace(min(x), max(x), 300)
+                        p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                        plt.plot(t, p, 'b-', label='Interpolação de Lagrange')
+                        plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
                         plt.scatter(x, y, color='red', label='Pontos dados')
+                        plt.plot(t_values, p_values, label='Lisboa', color='blue')
                         plt.title('Polinômio Interpolador de Lagrange')
                         plt.xlabel('x')
                         plt.ylabel('y')
@@ -164,14 +167,15 @@ while True:
                     sleep(0.21)
 
                     if op == 1:
-                        t = np.linspace(min(x), max(x), 300)
-                        p = [lagrange(x, y, ti) for ti in t]
+                        t_values = np.linspace(min(x), max(x), 300)
+                        p_values = [lagrange(x, y, ti) for ti in t_values]
 
                         plt.plot(x, y, 'o', label='Pontos dados', color='red')
-                        plt.plot(t, p, label='Polinômio de Lagrange', color='blue')
+                        plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
+                        plt.plot(t_values, p_values, label='Tóquio', color='blue')
+                        plt.title('Interpolação Polinomial de Lagrange')
                         plt.xlabel('x')
                         plt.ylabel('y')
-                        plt.title('Interpolação Polinomial de Lagrange')
                         plt.legend()
                         plt.grid(True)
                         plt.show()
@@ -202,15 +206,16 @@ while True:
                     sleep(0.21)
 
                     if op == 1:
-                        t = np.linspace(min(x), max(x), 200)
-                        p = [lagrange(x, y, ti) for ti in t]
+                        t_values = np.linspace(min(x), max(x), 200)
+                        p_values = [lagrange(x, y, ti) for ti in t_values]
 
                         plt.figure(figsize=(8, 5))
                         plt.plot(x, y, 'ro', label='Pontos conhecidos')
-                        plt.plot(t, p, 'b-', label='Interpolação de Lagrange')
+                        plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                        plt.plot(t_values, p_values, label='Recife', color='blue')
+                        plt.title('Interpolação de Lagrange')
                         plt.xlabel('x')
                         plt.ylabel('y')
-                        plt.title('Interpolação de Lagrange')
                         plt.legend()
                         plt.grid(True)
                         plt.show()
@@ -254,49 +259,70 @@ while True:
 
             temp_interp = lagrange(x, y, hora_decimal)
 
-            print("CARREGANDO TABELA DE TEMPERATURA", end="")
-            for i in range(3):
-                sleep(0.7)
-                print(".", end="")
-            print()
-            sleep(0.21)
+            try:
+                print("\nDeseja ver a tabela?")
+                print("1 - Sim.")
+                print("2 - Não.")
+                op = int(input("Digite aqui: "))
 
-            print("\n--- TABELA DE TEMPERATURAS ---")
-            print(f"Cidade: {nome_cidade}")
-            print("-------------------------------")
-            print(f"{'Hora (h)':<10} {'Temperatura (°C)':<20}")
-            print("-------------------------------")
-            for i in range(len(x)):
-                print(f"{x[i]:<10.0f} {y[i]:<20.1f}")
-            print("-------------------------------")
+                if op == 1:
+                    flag = 1
+                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
+                    for i in range(3):
+                        sleep(0.7)
+                        print(".", end="")
+                    print()
+                    sleep(0.21)
 
-            while True:
-                try:
-                    print("\nDeseja ver a temperatura ás", agora.strftime("%H:%M:%S"))
-                    print("1 - Sim.")
-                    print("2 - Não.")
-                    verificar = int(input("Digite aqui: "))
+                    print("\n--- TABELA DE TEMPERATURAS ---")
+                    print(f"Cidade: {nome_cidade}")
+                    print("-------------------------------")
+                    print(f"{'Hora (h)':<10} {'Temperatura (°C)':<20}")
+                    print("-------------------------------")
+                    for i in range(len(x)):
+                        print(f"{x[i]:<10.0f} {y[i]:<20.1f}")
+                    print("-------------------------------")
 
-                    if verificar == 1:
-                        print("CALCULANDO RESULTADO", end="")
-                        for _ in range(3):
-                            sleep(0.7)
-                            print(".", end="")
-                        print()
-                        sleep(0.21)
-                        print("\n--- RESULTADO ---")
-                        print("Horário atual:", agora.strftime("%H:%M:%S"))
-                        print(f"Hora decimal: {hora_decimal:.4f}")
-                        print(f"Temperatura interpolada (Lagrange): {temp_interp:.2f} °C")
-
-                        print("\nDeseja fazer uma nova consulta?")
-                        print("1 - Sim.")
-                        print("2 - Não.")
-                        verificar = int(input("Digite aqui: "))
-
+                    while True:
                         try:
+                            print("\nDeseja ver a temperatura ás", agora.strftime("%H:%M:%S"))
+                            print("1 - Sim.")
+                            print("2 - Não.")
+                            verificar = int(input("Digite aqui: "))
+
                             if verificar == 1:
-                                break
+                                print("\nCALCULANDO RESULTADO", end="")
+                                for _ in range(3):
+                                    sleep(0.7)
+                                    print(".", end="")
+                                print()
+                                sleep(0.21)
+                                print("\n--- RESULTADO ---")
+                                print("Horário atual:", agora.strftime("%H:%M:%S"))
+                                print(f"Hora decimal: {hora_decimal:.4f}")
+                                print(f"Temperatura interpolada (Lagrange): {temp_interp:.2f} °C")
+
+                                print("\nDeseja fazer uma nova consulta?")
+                                print("1 - Sim.")
+                                print("2 - Não.")
+                                verificar = int(input("Digite aqui: "))
+
+                                try:
+                                    if verificar == 1:
+                                        break
+                                    elif verificar == 2:
+                                        print("FIQUE BEM", end="")
+                                        for i in range(3):
+                                            sleep(0.7)
+                                            print(".", end="")
+                                        print()
+                                        sleep(0.21)
+                                        exit()
+                                    else:
+                                        print("\nOps...opção invalida!\n")
+                                except ValueError:
+                                    print("\nEntrada inválida. Digite uma opção válido.\n")
+
                             elif verificar == 2:
                                 print("FIQUE BEM", end="")
                                 for i in range(3):
@@ -305,24 +331,23 @@ while True:
                                 print()
                                 sleep(0.21)
                                 exit()
+
                             else:
                                 print("\nOps...opção invalida!\n")
+
                         except ValueError:
-                            print("\nEntrada inválida. Digite uma opção válido.\n")
-
-                    elif verificar == 2:
-                        print("FIQUE BEM", end="")
-                        for i in range(3):
-                            sleep(0.7)
-                            print(".", end="")
-                        print()
-                        sleep(0.21)
-                        exit()
-
-                    else:
-                        print("\nOps...opção invalida!\n")
-
-                except ValueError:
-                    print("\nEntrada inválida. Digite uma opção válida.\n")
+                            print("\nEntrada inválida. Digite uma opção válida.\n")
+                elif op == 2:
+                    print("FIQUE BEM", end="")
+                    for i in range(3):
+                        sleep(0.7)
+                        print(".", end="")
+                    print()
+                    sleep(0.21)
+                    exit()
+                else:
+                    print("\nOps...opção invalida!\n")
+            except ValueError:
+                print("\nEntrada inválida. Digite uma opção válida.\n")
     except ValueError:
         print("\nEntrada inválida. Digite uma opção válido.\n")
