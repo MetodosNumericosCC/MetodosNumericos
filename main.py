@@ -185,7 +185,6 @@ while True:
                     elif op == 2:
                         flag = 1
                         print("\nTudo bem!")
-                        break
                     else:
                         print("\nOps...opção invalida!\n")
                         while True:
@@ -355,103 +354,148 @@ while True:
                     except ValueError:
                         print("\nEntrada inválida. Digite uma opção válido.\n")
 
-        if flag == 1:
-            cidade = ZoneInfo(zona)
-            agora = datetime.now(cidade)
-            hora_decimal = agora.hour + agora.minute / 60 + agora.second / 3600
+        while True:
+            if flag == 1:
+                cidade = ZoneInfo(zona)
+                agora = datetime.now(cidade)
+                hora_decimal = agora.hour + agora.minute / 60 + agora.second / 3600
 
-            temp_interp = lagrange(x, y, hora_decimal)
+                temp_interp = lagrange(x, y, hora_decimal)
 
-            try:
-                print("\nDeseja ver a tabela?")
-                print("1 - Sim.")
-                print("2 - Não.")
-                op = int(input("Digite aqui: "))
+                try:
+                    print("\nDeseja ver a tabela?")
+                    print("1 - Sim.")
+                    print("2 - Não.")
+                    op = int(input("Digite aqui: "))
 
-                if op == 1:
-                    flag = 1
-                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
-                    for i in range(3):
-                        sleep(0.7)
-                        print(".", end="")
-                    print()
-                    sleep(0.21)
+                    if op == 1:
+                        flag = 1
+                        print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
+                        for i in range(3):
+                            sleep(0.7)
+                            print(".", end="")
+                        print()
+                        sleep(0.21)
 
-                    print("\n--- TABELA DE TEMPERATURAS ---")
-                    print(f"Cidade: {nome_cidade}")
-                    print("-------------------------------")
-                    print(f"{'Hora (h)':<10} {'Temperatura (°C)':<20}")
-                    print("-------------------------------")
-                    for i in range(len(x)):
-                        print(f"{x[i]:<10.0f} {y[i]:<20.1f}")
-                    print("-------------------------------")
+                        print("\n--- TABELA DE TEMPERATURAS ---")
+                        print(f"Cidade: {nome_cidade}")
+                        print("-------------------------------")
+                        print(f"{'Hora (h)':<10} {'Temperatura (°C)':<20}")
+                        print("-------------------------------")
+                        for i in range(len(x)):
+                            print(f"{x[i]:<10.0f} {y[i]:<20.1f}")
+                        print("-------------------------------")
 
-                    while True:
-                        try:
-                            print("\nDeseja ver a temperatura ás", agora.strftime("%H:%M:%S"))
-                            print("1 - Sim.")
-                            print("2 - Não.")
-                            verificar = int(input("Digite aqui: "))
-
-                            if verificar == 1:
-                                print("\nCALCULANDO RESULTADO", end="")
-                                for _ in range(3):
-                                    sleep(0.7)
-                                    print(".", end="")
-                                print()
-                                sleep(0.21)
-                                print("\n--- RESULTADO ---")
-                                print("Cidade: ", nome_cidade)
-                                print("Horário atual:", agora.strftime("%H:%M:%S"))
-                                print(f"Hora decimal: {hora_decimal:.4f}")
-                                print(f"Temperatura interpolada (Lagrange): {temp_interp:.2f} °C")
-
-                                print("\nDeseja fazer uma nova consulta?")
+                        while True:
+                            try:
+                                print("\nDeseja ver a temperatura ás", agora.strftime("%H:%M:%S"))
                                 print("1 - Sim.")
                                 print("2 - Não.")
                                 verificar = int(input("Digite aqui: "))
 
-                                try:
-                                    if verificar == 1:
-                                        break
-                                    elif verificar == 2:
-                                        print("FIQUE BEM", end="")
-                                        for i in range(3):
-                                            sleep(0.7)
-                                            print(".", end="")
-                                        print()
-                                        sleep(0.21)
-                                        exit()
-                                    else:
-                                        print("\nOps...opção invalida!\n")
-                                except ValueError:
-                                    print("\nEntrada inválida. Digite uma opção válido.\n")
+                                if verificar == 1:
+                                    print("\nCALCULANDO RESULTADO", end="")
+                                    for _ in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    print("\n--- RESULTADO ---")
+                                    print("Cidade: ", nome_cidade)
+                                    print("Horário atual:", agora.strftime("%H:%M:%S"))
+                                    print(f"Hora decimal: {hora_decimal:.4f}")
+                                    print(f"Temperatura interpolada (Lagrange): {temp_interp:.2f} °C")
 
-                            elif verificar == 2:
-                                print("FIQUE BEM", end="")
-                                for i in range(3):
-                                    sleep(0.7)
-                                    print(".", end="")
-                                print()
-                                sleep(0.21)
-                                exit()
+                                    while True:
+                                        print("\nDeseja fazer uma nova consulta?")
+                                        print("1 - Sim.")
+                                        print("2 - Não.")
+                                        verificar = int(input("Digite aqui: "))
 
-                            else:
-                                print("\nOps...opção invalida!\n")
+                                        try:
+                                            if verificar == 1:
+                                               break
+                                            elif verificar == 2:
+                                                print("FIQUE BEM", end="")
+                                                for i in range(3):
+                                                    sleep(0.7)
+                                                    print(".", end="")
+                                                print()
+                                                sleep(0.21)
+                                                exit()
+                                            else:
+                                                print("\nOps...opção invalida!\n")
+                                                while True:
+                                                    try:
+                                                        print("Deseja tentar novamente?")
+                                                        print("1 - Sim.")
+                                                        print("2 - Não.")
+                                                        verificar = int(input("Digite aqui: "))
 
-                        except ValueError:
-                            print("\nEntrada inválida. Digite uma opção válida.\n")
-                elif op == 2:
-                    print("FIQUE BEM", end="")
-                    for i in range(3):
-                        sleep(0.7)
-                        print(".", end="")
-                    print()
-                    sleep(0.21)
-                    exit()
-                else:
-                    print("\nOps...opção invalida!\n")
-            except ValueError:
-                print("\nEntrada inválida. Digite uma opção válida.\n")
+                                                        if verificar == 1:
+                                                            break
+                                                        elif verificar == 2:
+                                                            print("FIQUE BEM", end="")
+                                                            for i in range(3):
+                                                                sleep(0.7)
+                                                                print(".", end="")
+                                                            print()
+                                                            sleep(0.21)
+                                                            exit()
+                                                        else:
+                                                            print("\nOps...opção invalida!\n")
+                                                    except ValueError:
+                                                        print("\nEntrada inválida. Digite uma opção válido.\n")
+                                        except ValueError:
+                                            print("\nEntrada inválida. Digite uma opção válido.\n")
+                                    break
+                                elif verificar == 2:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    exit()
+
+                                else:
+                                    print("\nOps...opção invalida!\n")
+
+                            except ValueError:
+                                print("\nEntrada inválida. Digite uma opção válida.\n")
+                    elif op == 2:
+                        print("FIQUE BEM", end="")
+                        for i in range(3):
+                            sleep(0.7)
+                            print(".", end="")
+                        print()
+                        sleep(0.21)
+                        exit()
+                    else:
+                        print("\nOps...opção invalida!\n")
+                        while True:
+                            try:
+                                print("Deseja tentar novamente?")
+                                print("1 - Sim.")
+                                print("2 - Não.")
+                                verificar = int(input("Digite aqui: "))
+
+                                if verificar == 1:
+                                    break
+                                elif verificar == 2:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    exit()
+                                else:
+                                    print("\nOps...opção invalida!\n")
+                            except ValueError:
+                                print("\nEntrada inválida. Digite uma opção válido.\n")
+                except ValueError:
+                    print("\nEntrada inválida. Digite uma opção válida.\n")
+                break
     except ValueError:
         print("\nEntrada inválida. Digite uma opção válido.\n")
