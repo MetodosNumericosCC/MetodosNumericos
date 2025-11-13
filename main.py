@@ -44,7 +44,7 @@ while True:
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
-                        for _ in range(3):
+                        for i in range(3):
                             sleep(0.7)
                             print(".", end="")
                         print()
@@ -104,12 +104,12 @@ while True:
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
-                        for _ in range(3):
+                        for i in range(3):
                             sleep(0.7)
                             print(".", end="")
                         print()
                         sleep(0.21)
-                        t_values = np.linspace(min(x), max(x), 200)
+                        t_values = np.linspace(min(x), max(x), 300)
                         p_values = [lagrange(x, y, ti) for ti in t_values]
 
                         plt.plot(x, y, 'ro', label='Pontos dados')
@@ -164,7 +164,7 @@ while True:
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
-                        for _ in range(3):
+                        for i in range(3):
                             sleep(0.7)
                             print(".", end="")
                         print()
@@ -225,7 +225,7 @@ while True:
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
-                        for _ in range(3):
+                        for i in range(3):
                             sleep(0.7)
                             print(".", end="")
                         print()
@@ -285,12 +285,12 @@ while True:
 
                     if op == 1:
                         print("\nPREPARANDO GRÁFICO", end="")
-                        for _ in range(3):
+                        for i in range(3):
                             sleep(0.7)
                             print(".", end="")
                         print()
                         sleep(0.21)
-                        t_values = np.linspace(min(x), max(x), 200)
+                        t_values = np.linspace(min(x), max(x), 300)
                         p_values = [lagrange(x, y, ti) for ti in t_values]
 
                         plt.figure(figsize=(8, 5))
@@ -391,7 +391,7 @@ while True:
 
                         while True:
                             try:
-                                print("\nDESEJA VER A TEMPERATURA ÁS", agora.strftime("%H:%M:%S"))
+                                print(f"\nDESEJA VER A TEMPERATURA ATUAL NA CIDADE DE {nome_cidade.upper()}?\nHORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 verificar = int(input("DIGITE AQUI: "))
