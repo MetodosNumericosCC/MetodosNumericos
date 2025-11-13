@@ -343,7 +343,7 @@ while True:
                         verificar = int(input("DIGITE AQUI: "))
 
                         if verificar == 1:
-                            break
+                          break
                         elif verificar == 2:
                             print("FIQUE BEM", end="")
                             for i in range(3):
@@ -358,6 +358,9 @@ while True:
                         print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
 
         while True:
+            if flag == 0:
+                break
+
             if flag == 1:
                 cidade = ZoneInfo(zona)
                 agora = datetime.now(cidade)
@@ -369,7 +372,7 @@ while True:
                     print("\nDESEJA VER A TABELA?")
                     print("1 - SIM.")
                     print("2 - NÃO.")
-                    OP = int(input("DIGITE AQUI: "))
+                    op = int(input("DIGITE AQUI: "))
 
                     if op == 1:
                         flag = 1
@@ -498,7 +501,6 @@ while True:
                             except ValueError:
                                 print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                 except ValueError:
-                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
-                break
+                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA....\n")
     except ValueError:
         print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
