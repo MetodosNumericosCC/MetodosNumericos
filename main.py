@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
@@ -83,7 +84,7 @@ while True:
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    exit()
+                                    sys.exit()
                                 else:
                                     print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
@@ -143,7 +144,7 @@ while True:
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    exit()
+                                    sys.exit()
                                 else:
                                     print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
@@ -204,7 +205,7 @@ while True:
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    exit()
+                                    sys.exit()
                                 else:
                                     print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
@@ -264,7 +265,7 @@ while True:
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    exit()
+                                    sys.exit()
                                 else:
                                     print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
@@ -325,7 +326,7 @@ while True:
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    exit()
+                                    sys.exit()
                                 else:
                                     print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
@@ -351,7 +352,7 @@ while True:
                                 print(".", end="")
                             print()
                             sleep(0.21)
-                            exit()
+                            sys.exit()
                         else:
                             print("\nOPS...OPÇÃO INVÁLIDA!\n")
                     except ValueError:
@@ -428,7 +429,7 @@ while True:
                                                     print(".", end="")
                                                 print()
                                                 sleep(0.21)
-                                                exit()
+                                                sys.exit()
                                             else:
                                                 print("\nOPS...OPÇÃO INVÁLIDA!\n")
                                                 while True:
@@ -447,7 +448,7 @@ while True:
                                                                 print(".", end="")
                                                             print()
                                                             sleep(0.21)
-                                                            exit()
+                                                            sys.exit()
                                                         else:
                                                             print("\nOPS...OPÇÃO INVÁLIDA!\n")
                                                     except ValueError:
@@ -462,7 +463,7 @@ while True:
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    exit()
+                                    sys.exit()
 
                                 else:
                                     print("\nOPS...OPÇÃO INVÁLIDA!\n")
@@ -476,7 +477,7 @@ while True:
                             print(".", end="")
                         print()
                         sleep(0.21)
-                        exit()
+                        sys.exit()
                     else:
                         print("\nOPS...OPÇÃO INVÁLIDA!\n")
                         while True:
@@ -495,11 +496,12 @@ while True:
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    exit()
+                                    sys.exit()
                                 else:
                                     print("\nOPS...OPÇÃO INVÁLIDA!\n")
                             except ValueError:
                                 print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+                    break
                 except ValueError:
                     print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA....\n")
     except ValueError:
