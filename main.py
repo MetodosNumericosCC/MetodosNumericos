@@ -751,106 +751,198 @@ while True:
                     temp_interp = lagrange(x, y, hora_decimal)
 
                     try:
-                        print("\nDESEJA VER A TABELA?")
+                        print("\nDESEJA VER O GRÁFICO?")
                         print("1 - SIM.")
                         print("2 - NÃO.")
                         op = int(input("DIGITE AQUI: "))
 
                         if op == 1:
-                            flag = 1
-                            print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
-                            for i in range(3):
-                                sleep(0.7)
-                                print(".", end="")
-                            print()
-                            sleep(0.21)
+                            if tipo == 1:
+                                if flag == 1:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
 
-                            print("\n--- TABELA DE TEMPERATURAS ---")
-                            print(f"CIDADE: {nome_cidade.upper()}")
-                            print("-------------------------------")
-                            print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
-                            print("-------------------------------")
-                            for i in range(len(x)):
-                                print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
-                            print("-------------------------------")
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, t) for t in t_values]
+
+                                    plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
+                                    plt.plot(t_values, p_values, label='São Paulo', color='blue')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title('Interpolação de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 2:
+                                if flag == 1:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
+
+                                    plt.plot(x, y, 'ro', label='Pontos dados')
+                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                                    plt.plot(t_values, p_values, label='Nova York', color='blue')
+                                    plt.title('Interpolação Polinomial de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 3:
+                                if flag == 1:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
+
+                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.plot(t_values, p_values, label='Lisboa', color='blue')
+                                    plt.title('Polinômio Interpolador de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 4:
+                                if flag == 1:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
+
+                                    plt.plot(x, y, 'o', label='Pontos dados', color='red')
+                                    plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
+                                    plt.plot(t_values, p_values, label='Tóquio', color='blue')
+                                    plt.title('Interpolação Polinomial de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 5:
+                                if flag == 1:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(x, y, 'ro', label='Pontos conhecidos')
+                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                                    plt.plot(t_values, p_values, label='Recife', color='blue')
+                                    plt.title('Interpolação de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
 
                             while True:
-                                try:
-                                    print(f"\nDESEJA VER A TEMPERATURA ATUAL NA CIDADE DE {nome_cidade.upper()}?\nHORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
-                                    print("1 - SIM.")
-                                    print("2 - NÃO.")
-                                    verificar = int(input("DIGITE AQUI: "))
+                                if flag == 1:
+                                    try:
+                                        print(f"\nDESEJA VER A TEMPERATURA ATUAL NA CIDADE DE {nome_cidade.upper()}?\nHORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                        print("1 - SIM.")
+                                        print("2 - NÃO.")
+                                        verificar = int(input("DIGITE AQUI: "))
 
-                                    if verificar == 1:
-                                        print("\nCALCULANDO RESULTADO", end="")
-                                        for _ in range(3):
-                                            sleep(0.7)
-                                            print(".", end="")
-                                        print()
-                                        sleep(0.21)
-                                        print("\n--- RESULTADO ---")
-                                        print("CIDADE: ", nome_cidade.upper())
-                                        print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
-                                        print(f"HORA DECIMAL: {hora_decimal:.4f}")
-                                        print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
+                                        if verificar == 1:
+                                            print("\nCALCULANDO RESULTADO", end="")
+                                            for _ in range(3):
+                                                sleep(0.7)
+                                                print(".", end="")
+                                            print()
+                                            sleep(0.21)
+                                            print("\n--- RESULTADO ---")
+                                            print("CIDADE: ", nome_cidade.upper())
+                                            print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                            print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                            print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
 
-                                        while True:
-                                            print("\nDESEJA COMPARAR OS MÉTODOS?")
-                                            print("1 - SIM.")
-                                            print("2 - NÃO.")
-                                            verificar = int(input("DIGITE AQUI: "))
+                                            while True:
+                                                print("\nDESEJA COMPARAR OS MÉTODOS?")
+                                                print("1 - SIM.")
+                                                print("2 - NÃO.")
+                                                verificar = int(input("DIGITE AQUI: "))
 
-                                            try:
-                                                if verificar == 1:
-                                                    break
-                                                elif verificar == 2:
-                                                    print("FIQUE BEM", end="")
-                                                    for i in range(3):
-                                                        sleep(0.7)
-                                                        print(".", end="")
-                                                    print()
-                                                    sleep(0.21)
-                                                    sys.exit()
-                                                else:
-                                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
-                                                    while True:
-                                                        try:
-                                                            print("DESEJA TENTAR NOVAMENTE?")
-                                                            print("1 - SIM.")
-                                                            print("2 - NÃO.")
-                                                            verificar = int(input("DIGITE AQUI: "))
+                                                try:
+                                                    if verificar == 1:
+                                                        break
+                                                    elif verificar == 2:
+                                                        print("FIQUE BEM", end="")
+                                                        for i in range(3):
+                                                            sleep(0.7)
+                                                            print(".", end="")
+                                                        print()
+                                                        sleep(0.21)
+                                                        sys.exit()
+                                                    else:
+                                                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
+                                                        while True:
+                                                            try:
+                                                                print("DESEJA TENTAR NOVAMENTE?")
+                                                                print("1 - SIM.")
+                                                                print("2 - NÃO.")
+                                                                verificar = int(input("DIGITE AQUI: "))
 
-                                                            if verificar == 1:
-                                                                break
-                                                            elif verificar == 2:
-                                                                print("FIQUE BEM", end="")
-                                                                for i in range(3):
-                                                                    sleep(0.7)
-                                                                    print(".", end="")
-                                                                print()
-                                                                sleep(0.21)
-                                                                sys.exit()
-                                                            else:
-                                                                print("\nOPS...OPÇÃO INVÁLIDA!\n")
-                                                        except ValueError:
-                                                            print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
-                                            except ValueError:
-                                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
-                                        break
-                                    elif verificar == 2:
-                                        print("FIQUE BEM", end="")
-                                        for i in range(3):
-                                            sleep(0.7)
-                                            print(".", end="")
-                                        print()
-                                        sleep(0.21)
-                                        sys.exit()
+                                                                if verificar == 1:
+                                                                    break
+                                                                elif verificar == 2:
+                                                                    print("FIQUE BEM", end="")
+                                                                    for i in range(3):
+                                                                        sleep(0.7)
+                                                                        print(".", end="")
+                                                                    print()
+                                                                    sleep(0.21)
+                                                                    sys.exit()
+                                                                else:
+                                                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
+                                                            except ValueError:
+                                                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+                                                except ValueError:
+                                                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+                                            break
+                                        elif verificar == 2:
+                                            print("FIQUE BEM", end="")
+                                            for i in range(3):
+                                                sleep(0.7)
+                                                print(".", end="")
+                                            print()
+                                            sleep(0.21)
+                                            sys.exit()
 
-                                    else:
-                                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
+                                        else:
+                                            print("\nOPS...OPÇÃO INVÁLIDA!\n")
 
-                                except ValueError:
-                                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+                                    except ValueError:
+                                        print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                         elif op == 2:
                             print("FIQUE BEM", end="")
                             for i in range(3):
@@ -895,108 +987,213 @@ while True:
                     temp_interp = newton_eval(hora_decimal, x, coef_newton)
 
                     try:
-                        print("\nDESEJA VER A TABELA?")
+                        print("\nDESEJA VER O GRÁFICO?")
                         print("1 - SIM.")
                         print("2 - NÃO.")
                         op = int(input("DIGITE AQUI: "))
 
                         if op == 1:
-                            flag = 1
-                            print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
-                            for i in range(3):
-                                sleep(0.7)
-                                print(".", end="")
-                            print()
-                            sleep(0.21)
+                            if tipo == 1:
+                                if flag == 2:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
 
-                            print("\n--- TABELA DE TEMPERATURAS ---")
-                            print(f"CIDADE: {nome_cidade.upper()}")
-                            print("-------------------------------")
-                            print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
-                            print("-------------------------------")
-                            for i in range(len(x)):
-                                print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
-                            print("-------------------------------")
+                                    coef_newton = divided_differences(x, y)
+
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 2:
+                                if flag == 2:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+
+                                    coef_newton = divided_differences(x, y)
+
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 3:
+                                if flag == 2:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+
+                                    oef_newton = divided_differences(x, y)
+
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 4:
+                                if flag == 2:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+
+                                    coef_newton = divided_differences(x, y)
+
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
+                            if tipo == 5:
+                                if flag == 2:
+                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+
+                                    coef_newton = divided_differences(x, y)
+
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                    flag = 1
 
                             while True:
-                                try:
-                                    print(
-                                        f"\nDESEJA VER A TEMPERATURA ATUAL NA CIDADE DE {nome_cidade.upper()}?\nHORÁRIO ATUAL:",
-                                        agora.strftime("%H:%M:%S"))
-                                    print("1 - SIM.")
-                                    print("2 - NÃO.")
-                                    verificar = int(input("DIGITE AQUI: "))
+                                if flag == 1:
+                                    try:
+                                        print(
+                                            f"\nDESEJA VER A TEMPERATURA ATUAL NA CIDADE DE {nome_cidade.upper()}?\nHORÁRIO ATUAL:",
+                                            agora.strftime("%H:%M:%S"))
+                                        print("1 - SIM.")
+                                        print("2 - NÃO.")
+                                        verificar = int(input("DIGITE AQUI: "))
 
-                                    if verificar == 1:
-                                        print("\nCALCULANDO RESULTADO", end="")
-                                        for _ in range(3):
-                                            sleep(0.7)
-                                            print(".", end="")
-                                        print()
-                                        sleep(0.21)
-                                        print("\n--- RESULTADO ---")
-                                        print("CIDADE: ", nome_cidade.upper())
-                                        print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
-                                        print(f"HORA DECIMAL: {hora_decimal:.4f}")
-                                        print(f"TEMPERATURA INTERPOLADA (NEWTON): {temp_interp:.2f} °C")
+                                        if verificar == 1:
+                                            print("\nCALCULANDO RESULTADO", end="")
+                                            for _ in range(3):
+                                                sleep(0.7)
+                                                print(".", end="")
+                                            print()
+                                            sleep(0.21)
+                                            print("\n--- RESULTADO ---")
+                                            print("CIDADE: ", nome_cidade.upper())
+                                            print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                            print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                            print(f"TEMPERATURA INTERPOLADA (NEWTON): {temp_interp:.2f} °C")
 
-                                        while True:
-                                            print("\nDESEJA COMPARAR OS MÉTODOS?")
-                                            print("1 - SIM.")
-                                            print("2 - NÃO.")
-                                            verificar = int(input("DIGITE AQUI: "))
+                                            while True:
+                                                print("\nDESEJA COMPARAR OS MÉTODOS?")
+                                                print("1 - SIM.")
+                                                print("2 - NÃO.")
+                                                verificar = int(input("DIGITE AQUI: "))
 
-                                            try:
-                                                if verificar == 1:
-                                                    break
-                                                elif verificar == 2:
-                                                    print("FIQUE BEM", end="")
-                                                    for i in range(3):
-                                                        sleep(0.7)
-                                                        print(".", end="")
-                                                    print()
-                                                    sleep(0.21)
-                                                    sys.exit()
-                                                else:
-                                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
-                                                    while True:
-                                                        try:
-                                                            print("DESEJA TENTAR NOVAMENTE?")
-                                                            print("1 - SIM.")
-                                                            print("2 - NÃO.")
-                                                            verificar = int(input("DIGITE AQUI: "))
+                                                try:
+                                                    if verificar == 1:
+                                                        break
+                                                    elif verificar == 2:
+                                                        print("FIQUE BEM", end="")
+                                                        for i in range(3):
+                                                            sleep(0.7)
+                                                            print(".", end="")
+                                                        print()
+                                                        sleep(0.21)
+                                                        sys.exit()
+                                                    else:
+                                                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
+                                                        while True:
+                                                            try:
+                                                                print("DESEJA TENTAR NOVAMENTE?")
+                                                                print("1 - SIM.")
+                                                                print("2 - NÃO.")
+                                                                verificar = int(input("DIGITE AQUI: "))
 
-                                                            if verificar == 1:
-                                                                break
-                                                            elif verificar == 2:
-                                                                print("FIQUE BEM", end="")
-                                                                for i in range(3):
-                                                                    sleep(0.7)
-                                                                    print(".", end="")
-                                                                print()
-                                                                sleep(0.21)
-                                                                sys.exit()
-                                                            else:
-                                                                print("\nOPS...OPÇÃO INVÁLIDA!\n")
-                                                        except ValueError:
-                                                            print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
-                                            except ValueError:
-                                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
-                                        break
-                                    elif verificar == 2:
-                                        print("FIQUE BEM", end="")
-                                        for i in range(3):
-                                            sleep(0.7)
-                                            print(".", end="")
-                                        print()
-                                        sleep(0.21)
-                                        sys.exit()
+                                                                if verificar == 1:
+                                                                    break
+                                                                elif verificar == 2:
+                                                                    print("FIQUE BEM", end="")
+                                                                    for i in range(3):
+                                                                        sleep(0.7)
+                                                                        print(".", end="")
+                                                                    print()
+                                                                    sleep(0.21)
+                                                                    sys.exit()
+                                                                else:
+                                                                    print("\nOPS...OPÇÃO INVÁLIDA!\n")
+                                                            except ValueError:
+                                                                print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+                                                except ValueError:
+                                                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+                                            break
+                                        elif verificar == 2:
+                                            print("FIQUE BEM", end="")
+                                            for i in range(3):
+                                                sleep(0.7)
+                                                print(".", end="")
+                                            print()
+                                            sleep(0.21)
+                                            sys.exit()
 
-                                    else:
-                                        print("\nOPS...OPÇÃO INVÁLIDA!\n")
+                                        else:
+                                            print("\nOPS...OPÇÃO INVÁLIDA!\n")
 
-                                except ValueError:
-                                    print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
+                                    except ValueError:
+                                        print("\nENTRADA INVÁLIDA. DIGITE UMA OPÇÃO VÁLIDA.\n")
                         elif op == 2:
                             print("FIQUE BEM", end="")
                             for i in range(3):
@@ -1039,188 +1236,372 @@ while True:
                     break
                 match tipo:
                     case 1:
-                        print("\nPREPARANDO GRÁFICOS", end="")
-                        for i in range(3):
-                            sleep(0.7)
-                            print(".", end="")
-                        print()
-                        sleep(0.21)
+                        while True:
+                            print()
+                            print("1 - COMPARAR GRÁFICOS")
+                            print("2 - COMPARAR TEMPERATURAS INTERPOLADAS")
+                            print("3 - FINALIZAR APLICAÇÃO")
+                            escolha = int(input("DIGITE AQUI: "))
 
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [lagrange(x, y, t) for t in t_values]
+                            match escolha:
+                                case 1:
+                                    print("\nPREPARANDO GRÁFICOS", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
 
-                        plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
-                        plt.plot(t_values, p_values, label='São Paulo', color='blue')
-                        plt.scatter(x, y, color='red', label='Pontos dados')
-                        plt.title('Interpolação de Lagrange')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, t) for t in t_values]
 
-                        coef_newton = divided_differences(x, y)
+                                    plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
+                                    plt.plot(t_values, p_values, label='São Paulo', color='blue')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title('Interpolação de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
 
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+                                    coef_newton = divided_differences(x, y)
 
-                        plt.figure(figsize=(8, 5))
-                        plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                        plt.scatter(x, y, color='red', label='Pontos dados')
-                        plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
-                        sleep(2)
-                        break
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+
+                                case 2:
+                                    print("\nCALCULANDO RESULTADOS", end="")
+                                    for _ in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
+
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (NEWTON): {temp_interp:.2f} °C")
+
+                                case 3:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    sys.exit()
+                                case 4:
+                                    print("\nOPS...OPÇÃO INVÁLIDA!")
                     case 2:
-                        print("\nPREPARANDO GRÁFICOS", end="")
-                        for i in range(3):
-                            sleep(0.7)
-                            print(".", end="")
-                        print()
-                        sleep(0.21)
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [lagrange(x, y, ti) for ti in t_values]
+                        while True:
+                            print()
+                            print("1 - COMPARAR GRÁFICOS")
+                            print("2 - COMPARAR TEMPERATURAS INTERPOLADAS")
+                            print("3 - FINALIZAR APLICAÇÃO")
+                            escolha = int(input("DIGITE AQUI: "))
 
-                        plt.plot(x, y, 'ro', label='Pontos dados')
-                        plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
-                        plt.plot(t_values, p_values, label='Nova York', color='blue')
-                        plt.title('Interpolação Polinomial de Lagrange')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
+                            match escolha:
+                                case 1:
+                                    print("\nPREPARANDO GRÁFICOS", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                        coef_newton = divided_differences(x, y)
+                                    plt.plot(x, y, 'ro', label='Pontos dados')
+                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                                    plt.plot(t_values, p_values, label='Nova York', color='blue')
+                                    plt.title('Interpolação Polinomial de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
 
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+                                    coef_newton = divided_differences(x, y)
 
-                        plt.figure(figsize=(8, 5))
-                        plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                        plt.scatter(x, y, color='red', label='Pontos dados')
-                        plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
-                        sleep(2)
-                        break
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+
+                                case 2:
+                                    print("\nCALCULANDO RESULTADOS", end="")
+                                    for _ in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
+
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (NEWTON): {temp_interp:.2f} °C")
+
+                                case 3:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    sys.exit()
+                                case 4:
+                                    print("\nOPS...OPÇÃO INVÁLIDA!")
                     case 3:
-                        print("\nPREPARANDO GRÁFICOS", end="")
-                        for i in range(3):
-                            sleep(0.7)
-                            print(".", end="")
-                        print()
-                        sleep(0.21)
+                        while True:
+                            print()
+                            print("1 - COMPARAR GRÁFICOS")
+                            print("2 - COMPARAR TEMPERATURAS INTERPOLADAS")
+                            print("3 - FINALIZAR APLICAÇÃO")
+                            escolha = int(input("DIGITE AQUI: "))
 
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [lagrange(x, y, ti) for ti in t_values]
+                            match escolha:
+                                case 1:
+                                    print("\nPREPARANDO GRÁFICOS", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
 
-                        plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
-                        plt.scatter(x, y, color='red', label='Pontos dados')
-                        plt.plot(t_values, p_values, label='Lisboa', color='blue')
-                        plt.title('Polinômio Interpolador de Lagrange')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                        coef_newton = divided_differences(x, y)
+                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.plot(t_values, p_values, label='Lisboa', color='blue')
+                                    plt.title('Polinômio Interpolador de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
 
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+                                    coef_newton = divided_differences(x, y)
 
-                        plt.figure(figsize=(8, 5))
-                        plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                        plt.scatter(x, y, color='red', label='Pontos dados')
-                        plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
-                        sleep(2)
-                        break
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+
+                                case 2:
+                                    print("\nCALCULANDO RESULTADOS", end="")
+                                    for _ in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
+
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (NEWTON): {temp_interp:.2f} °C")
+
+                                case 3:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    sys.exit()
+                                case 4:
+                                    print("\nOPS...OPÇÃO INVÁLIDA!")
+
                     case 4:
-                        print("\nPREPARANDO GRÁFICOS", end="")
-                        for i in range(3):
-                            sleep(0.7)
-                            print(".", end="")
-                        print()
-                        sleep(0.21)
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [lagrange(x, y, ti) for ti in t_values]
+                        while True:
+                            print()
+                            print("1 - COMPARAR GRÁFICOS")
+                            print("2 - COMPARAR TEMPERATURAS INTERPOLADAS")
+                            print("3 - FINALIZAR APLICAÇÃO")
+                            escolha = int(input("DIGITE AQUI: "))
 
-                        plt.plot(x, y, 'o', label='Pontos dados', color='red')
-                        plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
-                        plt.plot(t_values, p_values, label='Tóquio', color='blue')
-                        plt.title('Interpolação Polinomial de Lagrange')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
+                            match escolha:
+                                case 1:
+                                    print("\nPREPARANDO GRÁFICOS", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                        coef_newton = divided_differences(x, y)
+                                    plt.plot(x, y, 'o', label='Pontos dados', color='red')
+                                    plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
+                                    plt.plot(t_values, p_values, label='Tóquio', color='blue')
+                                    plt.title('Interpolação Polinomial de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
 
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+                                    coef_newton = divided_differences(x, y)
 
-                        plt.figure(figsize=(8, 5))
-                        plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                        plt.scatter(x, y, color='red', label='Pontos dados')
-                        plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
-                        sleep(2)
-                        break
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+
+                                case 2:
+                                    print("\nCALCULANDO RESULTADOS", end="")
+                                    for _ in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
+
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (NEWTON): {temp_interp:.2f} °C")
+
+                                case 3:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    sys.exit()
+                                case 4:
+                                    print("\nOPS...OPÇÃO INVÁLIDA!")
                     case 5:
-                        print("\nPREPARANDO GRÁFICOS", end="")
-                        for i in range(3):
-                            sleep(0.7)
-                            print(".", end="")
-                        print()
-                        sleep(0.21)
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [lagrange(x, y, ti) for ti in t_values]
+                        while True:
+                            print()
+                            print("1 - COMPARAR GRÁFICOS")
+                            print("2 - COMPARAR TEMPERATURAS INTERPOLADAS")
+                            print("3 - FINALIZAR APLICAÇÃO")
+                            escolha = int(input("DIGITE AQUI: "))
 
-                        plt.figure(figsize=(8, 5))
-                        plt.plot(x, y, 'ro', label='Pontos conhecidos')
-                        plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
-                        plt.plot(t_values, p_values, label='Recife', color='blue')
-                        plt.title('Interpolação de Lagrange')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
+                            match escolha:
+                                case 1:
+                                    print("\nPREPARANDO GRÁFICOS", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                        coef_newton = divided_differences(x, y)
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(x, y, 'ro', label='Pontos conhecidos')
+                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
+                                    plt.plot(t_values, p_values, label='Recife', color='blue')
+                                    plt.title('Interpolação de Lagrange')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
 
-                        t_values = np.linspace(min(x), max(x), 300)
-                        p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+                                    coef_newton = divided_differences(x, y)
 
-                        plt.figure(figsize=(8, 5))
-                        plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                        plt.scatter(x, y, color='red', label='Pontos dados')
-                        plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                        plt.xlabel('Hora (h)')
-                        plt.ylabel('Temperatura (°C)')
-                        plt.legend()
-                        plt.grid(True)
-                        plt.show()
-                        sleep(2)
-                        break
+                                    t_values = np.linspace(min(x), max(x), 300)
+                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
+
+                                    plt.figure(figsize=(8, 5))
+                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
+                                    plt.scatter(x, y, color='red', label='Pontos dados')
+                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
+                                    plt.xlabel('Hora (h)')
+                                    plt.ylabel('Temperatura (°C)')
+                                    plt.legend()
+                                    plt.grid(True)
+                                    plt.show()
+                                case 2:
+                                    print("\nCALCULANDO RESULTADOS", end="")
+                                    for _ in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (LAGRANGE): {temp_interp:.2f} °C")
+
+                                    print("\n--- RESULTADO ---")
+                                    print("CIDADE: ", nome_cidade.upper())
+                                    print("HORÁRIO ATUAL:", agora.strftime("%H:%M:%S"))
+                                    print(f"HORA DECIMAL: {hora_decimal:.4f}")
+                                    print(f"TEMPERATURA INTERPOLADA (NEWTON): {temp_interp:.2f} °C")
+
+                                case 3:
+                                    print("FIQUE BEM", end="")
+                                    for i in range(3):
+                                        sleep(0.7)
+                                        print(".", end="")
+                                    print()
+                                    sleep(0.21)
+                                    sys.exit()
+                                case 4:
+                                    print("\nOPS...OPÇÃO INVÁLIDA!")
             break
 
         except ValueError:
