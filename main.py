@@ -79,30 +79,27 @@ while True:
                             tipo = 1
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [lagrange(x, y, t) for t in t_values]
 
-                                    plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
-                                    plt.plot(t_values, p_values, label='São Paulo', color='blue')
-                                    plt.scatter(x, y, color='red', label='Pontos dados')
-                                    plt.title('Interpolação de Lagrange')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 1
                                 elif op == 2:
                                     flag = 1
@@ -141,30 +138,27 @@ while True:
                             tipo = 2
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                                    plt.plot(x, y, 'ro', label='Pontos dados')
-                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
-                                    plt.plot(t_values, p_values, label='Nova York', color='blue')
-                                    plt.title('Interpolação Polinomial de Lagrange')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 1
                                 elif op == 2:
                                     flag = 1
@@ -203,31 +197,27 @@ while True:
                             tipo = 3
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
 
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [lagrange(x, y, ti) for ti in t_values]
-
-                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
-                                    plt.scatter(x, y, color='red', label='Pontos dados')
-                                    plt.plot(t_values, p_values, label='Lisboa', color='blue')
-                                    plt.title('Polinômio Interpolador de Lagrange')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 1
                                 elif op == 2:
                                     flag = 1
@@ -266,30 +256,27 @@ while True:
                             tipo = 4
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                                    plt.plot(x, y, 'o', label='Pontos dados', color='red')
-                                    plt.plot(t_values, p_values, label='Polinômio de Lagrange', color='blue')
-                                    plt.plot(t_values, p_values, label='Tóquio', color='blue')
-                                    plt.title('Interpolação Polinomial de Lagrange')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 1
                                 elif op == 2:
                                     flag = 1
@@ -328,31 +315,27 @@ while True:
                             tipo = 5
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [lagrange(x, y, ti) for ti in t_values]
 
-                                    plt.figure(figsize=(8, 5))
-                                    plt.plot(x, y, 'ro', label='Pontos conhecidos')
-                                    plt.plot(t_values, p_values, 'b-', label='Interpolação de Lagrange')
-                                    plt.plot(t_values, p_values, label='Recife', color='blue')
-                                    plt.title('Interpolação de Lagrange')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 1
                                 elif op == 2:
                                     flag = 1
@@ -430,30 +413,27 @@ while True:
                             coef_newton = divided_differences(x, y)
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
 
-                                    plt.figure(figsize=(8, 5))
-                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                                    plt.scatter(x, y, color='red', label='Pontos dados')
-                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 2
                                 elif op == 2:
                                     flag = 2
@@ -494,30 +474,27 @@ while True:
                             coef_newton = divided_differences(x, y)
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
 
-                                    plt.figure(figsize=(8, 5))
-                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                                    plt.scatter(x, y, color='red', label='Pontos dados')
-                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 2
                                 elif op == 2:
                                     flag = 2
@@ -558,30 +535,27 @@ while True:
                             coef_newton = divided_differences(x, y)
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
 
-                                    plt.figure(figsize=(8, 5))
-                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                                    plt.scatter(x, y, color='red', label='Pontos dados')
-                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 2
                                 elif op == 2:
                                     flag = 2
@@ -622,30 +596,27 @@ while True:
                             coef_newton = divided_differences(x, y)
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
 
-                                    plt.figure(figsize=(8, 5))
-                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                                    plt.scatter(x, y, color='red', label='Pontos dados')
-                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 2
                                 elif op == 2:
                                     flag = 2
@@ -686,30 +657,27 @@ while True:
                             coef_newton = divided_differences(x, y)
 
                             try:
-                                print("\nDESEJA VER O GRÁFICO?")
+                                print("\nDESEJA VER A TABELA?")
                                 print("1 - SIM.")
                                 print("2 - NÃO.")
                                 op = int(input("DIGITE AQUI: "))
 
                                 if op == 1:
-                                    print("\nPREPARANDO GRÁFICO", end="")
+                                    print("\nCARREGANDO TABELA DE TEMPERATURA", end="")
                                     for i in range(3):
                                         sleep(0.7)
                                         print(".", end="")
                                     print()
                                     sleep(0.21)
-                                    t_values = np.linspace(min(x), max(x), 300)
-                                    p_values = [newton_eval(ti, x, coef_newton) for ti in t_values]
 
-                                    plt.figure(figsize=(8, 5))
-                                    plt.plot(t_values, p_values, label='Interpolação (Newton)')
-                                    plt.scatter(x, y, color='red', label='Pontos dados')
-                                    plt.title(f'Interpolação polinomial - {nome_cidade} (Newton)')
-                                    plt.xlabel('Hora (h)')
-                                    plt.ylabel('Temperatura (°C)')
-                                    plt.legend()
-                                    plt.grid(True)
-                                    plt.show()
+                                    print("\n--- TABELA DE TEMPERATURAS ---")
+                                    print(f"CIDADE: {nome_cidade.upper()}")
+                                    print("-------------------------------")
+                                    print(f"{'HORA (H)':<10} {'TEMPERATURA (°C)':<20}")
+                                    print("-------------------------------")
+                                    for i in range(len(x)):
+                                        print(f"{x[i]:<20.1f} {y[i]:<20.1f}")
+                                    print("-------------------------------")
                                     flag = 2
                                 elif op == 2:
                                     flag = 2
