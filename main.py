@@ -117,6 +117,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -178,6 +179,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -240,6 +242,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -301,6 +304,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -363,6 +367,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -389,6 +394,7 @@ while True:
                                     verificar = int(input("DIGITE AQUI: "))
 
                                     if verificar == 1:
+                                        tipo = 0
                                         break
                                     elif verificar == 2:
                                         print("FIQUE BEM", end="")
@@ -462,6 +468,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -525,6 +532,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -588,6 +596,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -651,6 +660,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -714,6 +724,7 @@ while True:
                                             verificar = int(input("DIGITE AQUI: "))
 
                                             if verificar == 1:
+                                                tipo = 0
                                                 break
                                             elif verificar == 2:
                                                 print("FIQUE BEM", end="")
@@ -740,6 +751,7 @@ while True:
                                     verificar = int(input("DIGITE AQUI: "))
 
                                     if verificar == 1:
+                                        tipo = 0
                                         break
                                     elif verificar == 2:
                                         print("FIQUE BEM", end="")
@@ -889,6 +901,7 @@ while True:
                                     verificar = int(input("DIGITE AQUI: "))
 
                                     if verificar == 1:
+                                        tipo = 0
                                         break
                                     elif verificar == 2:
                                         print("FIQUE BEM", end="")
@@ -1034,6 +1047,7 @@ while True:
                                     verificar = int(input("DIGITE AQUI: "))
 
                                     if verificar == 1:
+                                        tipo = 0
                                         break
                                     elif verificar == 2:
                                         print("FIQUE BEM", end="")
@@ -1053,6 +1067,8 @@ while True:
 
 
             while True:
+                if tipo == 0:
+                    break
                 match tipo:
                     case 1:
                         print("\nPREPARANDO GRÁFICOS", end="")
