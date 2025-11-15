@@ -27,6 +27,7 @@ Projeto produzido durante o estudo de Métodos Numéricos
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Python
+- Pycharm
 - Google Colab
 - Git e Github
   
